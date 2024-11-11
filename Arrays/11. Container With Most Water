@@ -1,0 +1,30 @@
+class Solution {
+    public int maxArea(int[] height) {
+        int arrlength=height.length;
+        int first=0;
+        int last=arrlength-1;
+        int water=0;
+        for(int i=0;i<arrlength;i++){
+         if(first==last){
+            break;
+         }
+         if(height[first]>height[last]){
+            int wat=height[last]*(last-first);
+            if(wat>water){
+                water=wat;
+            }
+         } else{
+            int wat=height[first]*(last-first);
+            if(wat>water){
+                water=wat;
+            }
+         }
+          if(height[first]<height[last]){
+                first++;
+            }else{
+                last--;
+            }
+        }
+    return water;
+}
+}
