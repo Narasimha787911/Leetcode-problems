@@ -10,13 +10,13 @@
  */
 class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        ListNode dummy = new ListNode(0);  // Dummy node to act as the head
-        ListNode tail = dummy;            // Tail to build the result list
-        int carry = 0;                    // Carry for addition
+        ListNode dummy = new ListNode(0);  
+        ListNode tail = dummy;            
+        int carry = 0;                  
 
         // Traverse through both lists
         while (l1 != null || l2 != null || carry > 0) {
-            int sum = carry;              // Start with carry from the last step
+            int sum = carry;          
 
             // Add values from l1 and l2, if present
             if (l1 != null) {
