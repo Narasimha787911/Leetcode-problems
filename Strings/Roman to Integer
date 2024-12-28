@@ -1,0 +1,45 @@
+class Solution {
+    public int romanToInt(String s) {
+       
+        int len=s.length();
+        if(len==1){
+            return pr(s.charAt(0));
+        }
+        int sum=0;
+        char cha='a';
+        for(int i=1;i<len;i++)
+        {
+            cha=s.charAt(i);
+            char che=s.charAt(i-1);
+          if(pr(che)<pr(cha)){
+            sum-=pr(che);
+            
+          }else{
+            sum+=pr(che);
+          }
+        }
+        sum+=pr(cha);
+        return sum;
+    }
+    public  int pr(char ch){
+        if(ch=='M'){
+            return 1000;
+        }
+        else if(ch=='D'){
+            return 500;
+        }
+        else if(ch=='C'){
+            return 100;
+        }else if(ch=='L'){
+            return 50;
+        }else if(ch=='X'){
+            return 10;
+        }else if(ch=='V'){
+            return 5;
+        }else {
+            return 1;
+        }
+    
+
+    }
+}
